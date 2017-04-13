@@ -1,0 +1,10 @@
+controllers/LocationController.class
+db/model/Location.class
+HelloWorldApplication.class
+HelloWorldResource.class
+Saying.class
+app/WayApplication.class
+app/WayConfiguration.class
+TemplateHealthCheck.class
+db/dao/LocationDAO.class
+HelloWorldConfiguration.class
