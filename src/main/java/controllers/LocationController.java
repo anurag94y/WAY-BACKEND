@@ -20,7 +20,7 @@ import javax.ws.rs.core.MediaType;
 public class LocationController {
     @POST
     @Timed
-    public String register(String locationDetailJson) {
+    public String setLocationDetail(String locationDetailJson) {
         try {
             LocationDAO userDetailDAO = new LocationDAO();
             Location locationDetail = new Gson().fromJson(locationDetailJson, Location.class);
@@ -47,4 +47,18 @@ public class LocationController {
             return "{\"status\" : \"Error occured while getting location for Username\"}";
         }
     }
+
+    @PUT
+    @Timed
+    public String updateLocationDetail(String locationDetailJson) {
+        try {
+            LocationDAO userDetailDAO = new LocationDAO();
+            Location locationDetail = new Gson().fromJson(locationDetailJson, Location.class);
+            userDetailDAO.updateLocationDetail(locationDetail);
+            return "{\"status\": \"Location updated successfully\"}";
+        } catch (Exception e) {
+            return "{\"status\": \"Error occured while updating\"}";
+        }
+    }
+
 }

@@ -22,22 +22,20 @@ public class UserDetail {
     private String username;
     private String password;
     private String emailId;
-    @Indexed(value= IndexDirection.ASC, name="mobile_username_indx", unique=true)
+    @Indexed(value= IndexDirection.ASC, name="register_mobile_indx", unique=true)
     private String mobileNumber;
     private String firstName;
     private String lastName;
-    private List<String> friendsUsername;
 
     public UserDetail() {}
 
-    public UserDetail(String username, String password, String emailId, String mobileNumber, String firstName, String lastName, List<String> friendsUsername) {
+    public UserDetail(String username, String password, String emailId, String mobileNumber, String firstName, String lastName) {
         this.username = username;
         this.password = password;
         this.emailId = emailId;
         this.mobileNumber = mobileNumber;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.friendsUsername = friendsUsername;
     }
 
     public ObjectId get_id() {
@@ -94,13 +92,5 @@ public class UserDetail {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public List<String> getFriendsUsername() {
-        return friendsUsername;
-    }
-
-    public void setFriendsUsername(List<String> friendsUsername) {
-        this.friendsUsername = friendsUsername;
     }
 }

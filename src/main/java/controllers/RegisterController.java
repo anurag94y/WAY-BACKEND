@@ -2,13 +2,19 @@ package controllers;
 
 import com.codahale.metrics.annotation.Timed;
 import com.google.gson.Gson;
+import db.dao.FriendDAO;
+import db.dao.LocationDAO;
 import db.dao.LoginDAO;
 import db.dao.UserDetailDAO;
+import db.model.Friend;
+import db.model.Location;
 import db.model.Login;
 import db.model.UserDetail;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by anurag.yadav on 4/13/17.
@@ -28,6 +34,10 @@ public class RegisterController {
             Login loginDetail = new Gson().fromJson(userDetailJson, Login.class);
             System.out.println(loginDetail);
             loginDAO.setLoginDetail(loginDetail);
+            FriendDAO friendDAO = new FriendDAO();
+            friendDAO.setFriendDetail(new Friend(userDetail.getUsername(), new ArrayList<String>()));
+            LocationDAO locationDAO = new LocationDAO();
+            locationDAO.setLocationDetail(new Location(loginDetail.getUsername(), 12.941585, 77.631109));
             return "{\"status\": \"registered\"}";
         } catch (Exception e) {
             return "{\"status\": \"unable to setUserDetail\"}";

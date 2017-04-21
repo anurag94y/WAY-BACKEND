@@ -1,5 +1,6 @@
 package app;
 
+import controllers.FriendController;
 import controllers.LocationController;
 import controllers.LoginController;
 import controllers.RegisterController;
@@ -31,9 +32,11 @@ public class WayApplication extends Application<WayConfiguration> {
         final LoginController login = new LoginController();
         final RegisterController register = new RegisterController();
         final LocationController location = new LocationController();
+        final FriendController friend = new FriendController();
         environment.jersey().register(login);
         environment.jersey().register(register);
         environment.jersey().register(location);
+        environment.jersey().register(friend);
     }
 
 
@@ -43,14 +46,14 @@ public class WayApplication extends Application<WayConfiguration> {
 //        final HelloWorldResource resource = new HelloWorldResource(configuration.getTemplate(),
 //                configuration.getDefaultName());
 //        final LoginController login = new LoginController();
-//        final RegisterController register = new RegisterController();
+//        final RegisterController setLocationDetail = new RegisterController();
 //        final LocationController location = new LocationController();
 //        final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
-//        environment.healthChecks().register("template", healthCheck);
-//        environment.jersey().register(resource);
-//        environment.jersey().register(login);
-//        environment.jersey().register(register);
-//        environment.jersey().register(location);
+//        environment.healthChecks().setLocationDetail("template", healthCheck);
+//        environment.jersey().setLocationDetail(resource);
+//        environment.jersey().setLocationDetail(login);
+//        environment.jersey().setLocationDetail(setLocationDetail);
+//        environment.jersey().setLocationDetail(location);
 //    }
 
 }

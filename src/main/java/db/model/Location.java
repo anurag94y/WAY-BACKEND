@@ -3,6 +3,8 @@ package db.model;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Indexed;
+import org.mongodb.morphia.utils.IndexDirection;
 
 /**
  * Created by anurag.yadav on 4/13/17.
@@ -11,6 +13,7 @@ import org.mongodb.morphia.annotations.Id;
 public class Location {
     @Id
     private ObjectId objectId;
+    @Indexed(value= IndexDirection.ASC, name="location_username_indx", unique=true)
     private String username;
     private Double latitude;
     private Double longitude;
