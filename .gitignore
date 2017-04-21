@@ -8,4 +8,4 @@
 /captures
 .jar
 .idea/inspectionProfiles/
-target/*
+target/
