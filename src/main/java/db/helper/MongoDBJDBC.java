@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MongoDBJDBC {
 
-    private static final MongoClient mongoClient = new MongoClient("localhost", 27017);
+    private static final MongoClient mongoClient = new MongoClient("dbhostname", 27017);
 
 
     public static MongoClient getMongoClient() {
