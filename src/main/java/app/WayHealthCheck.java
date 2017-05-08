@@ -1,12 +1,12 @@
+package app;
+
 import com.codahale.metrics.health.HealthCheck;
 import com.mongodb.DB;
 import db.helper.MongoDBJDBC;
 
-public class TemplateHealthCheck extends HealthCheck {
-    private final String template;
+public class WayHealthCheck extends HealthCheck {
 
-    public TemplateHealthCheck(String template) {
-        this.template = template;
+    public WayHealthCheck() {
     }
 
     @Override

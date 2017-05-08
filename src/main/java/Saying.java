@@ -41,15 +41,16 @@ public class Saying {
     }
 
     public static void main(String[] args) {
-        /*RegisterController registerController = new RegisterController();
-        UserDetail login = new UserDetail("hellboy_86", "8anurag6", "anurag94y@id.com", "8958807064", "Anurag", "Yadav");
-        registerController.setLocationDetail(new Gson().toJson(login));
-        login = new UserDetail("blade_21", "pratul21", "pratul21@id.com", "9259534850", "Pratul", "Tiwari");
-        registerController.setLocationDetail(new Gson().toJson(login));
+        RegisterController registerController = new RegisterController();
+        UserDetail login = new UserDetail("hellboy_86", "8anurag6", "anurag94y@gmail.com", "8958807064", "Anurag", "Yadav");
+        //registerController.register(new Gson().toJson(login));
+        //login = new UserDetail("blade_21", "pratul21", "pratul21@id.com", "9259534850", "Pratul", "Tiwari");
+        //registerController.setLocationDetail(new Gson().toJson(login));
         login = new UserDetail("paras885", "paras885", "paras885@id.com", "9368968501", "Paras", "Meena");
-        registerController.setLocationDetail(new Gson().toJson(login));*/
-        LocationDAO locationDAO = new LocationDAO();
-        locationDAO.updateLocationDetail(new Location("blade_21", 15.905540, 77.605509));
+        System.out.println(new Gson().toJson(login));
+        //registerController.setLocationDetail(new Gson().toJson(login));
+        //LocationDAO locationDAO = new LocationDAO();
+        //locationDAO.updateLocationDetail(new Location("blade_21", 15.905540, 77.605509));
         //final Login login2 = new Login("username", "password", "email@id.com", "8958807064");
         //Datastore datastore = MorphiaClient.getDataStore("way");
         //datastore.ensureIndexes(UserDetail.class);

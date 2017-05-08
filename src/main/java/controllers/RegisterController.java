@@ -40,6 +40,7 @@ public class RegisterController {
             locationDAO.setLocationDetail(new Location(loginDetail.getUsername(), 12.941585, 77.631109));
             return "{\"status\": \"registered\"}";
         } catch (Exception e) {
+            e.printStackTrace();
             return "{\"status\": \"unable to setUserDetail\"}";
         }
     }

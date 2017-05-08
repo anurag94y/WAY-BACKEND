@@ -2,6 +2,7 @@ package db.helper;
 
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -11,8 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MongoDBJDBC {
 
-    private static final MongoClient mongoClient = new MongoClient("dbhostname", 27017);
-
+    private static final MongoClient mongoClient = new MongoClient(new MongoClientURI( "mongodb://hellboy86:8anurag6@ds133321.mlab.com:33321/way" ));
 
     public static MongoClient getMongoClient() {
         if (mongoClient != null) {

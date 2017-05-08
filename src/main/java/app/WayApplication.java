@@ -5,10 +5,8 @@ import controllers.LocationController;
 import controllers.LoginController;
 import controllers.RegisterController;
 import io.dropwizard.Application;
-import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-
 /**
  * Created by anurag.yadav on 4/13/17.
  */
@@ -33,6 +31,8 @@ public class WayApplication extends Application<WayConfiguration> {
         final RegisterController register = new RegisterController();
         final LocationController location = new LocationController();
         final FriendController friend = new FriendController();
+        final WayHealthCheck healthCheck = new WayHealthCheck();
+        environment.healthChecks().register("template", healthCheck);
         environment.jersey().register(login);
         environment.jersey().register(register);
         environment.jersey().register(location);
@@ -48,7 +48,7 @@ public class WayApplication extends Application<WayConfiguration> {
 //        final LoginController login = new LoginController();
 //        final RegisterController setLocationDetail = new RegisterController();
 //        final LocationController location = new LocationController();
-//        final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
+//        final WayHealthCheck healthCheck = new WayHealthCheck(configuration.getTemplate());
 //        environment.healthChecks().setLocationDetail("template", healthCheck);
 //        environment.jersey().setLocationDetail(resource);
 //        environment.jersey().setLocationDetail(login);
